@@ -75,7 +75,7 @@ class ToolingApiExploratoryTests {
             buildLauncher.addProgressListener(progressEvents::add, Set.of(OperationType.TASK));
 
             buildLauncher.run(resultHandler);
-        } // when connection is closed, it blocks until the in-flight operations ar complete
+        } // when connection is closed, it blocks until the in-flight operations are complete
 
         assertThat(resultHandler.onCompleteCalled()).isTrue();
         assertThat(resultHandler.hasFailure()).isFalse();
@@ -122,7 +122,7 @@ class ToolingApiExploratoryTests {
             buildLauncher.addProgressListener(progressEvents::add, Set.of(OperationType.TASK));
 
             buildLauncher.run(resultHandler);
-        }
+        } // when connection is closed, it blocks until the in-flight operations are complete
 
         assertThat(progressEvents.isEmpty());
         assertThat(standardError.toString()).contains("Task 'foobar' not found in root project 'gradle-tooling-api-experiments'.");
